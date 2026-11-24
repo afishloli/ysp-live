@@ -1,0 +1,12 @@
+# Render Blueprint for ysp-live v11.3 — put this file at the GitHub repo root,
+# next to Dockerfile, ysp-live-v11.3.py and ysp-engine.js.
+# Region Singapore, plan free (512 MB, 750 h/month, sleeps after 15 min idle).
+# Do NOT set PORT yourself — Render injects it and the Dockerfile reads $PORT.
+services:
+  - type: web
+    name: ysp-live
+    runtime: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
